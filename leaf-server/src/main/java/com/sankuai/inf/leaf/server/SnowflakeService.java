@@ -22,6 +22,7 @@ public class SnowflakeService {
         if (flag) {
             String zkAddress = properties.getProperty(Constants.LEAF_SNOWFLAKE_ZK_ADDRESS);
             int port = Integer.parseInt(properties.getProperty(Constants.LEAF_SNOWFLAKE_PORT));
+            logger.info("======> Constants.LEAF_SNOWFLAKE_PORT, {}", port);
             idGen = new SnowflakeIDGenImpl(zkAddress, port);
             if(idGen.init()) {
                 logger.info("Snowflake Service Init Successfully");

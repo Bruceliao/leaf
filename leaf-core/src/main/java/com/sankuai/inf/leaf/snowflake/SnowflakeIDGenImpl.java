@@ -43,7 +43,7 @@ public class SnowflakeIDGenImpl implements IDGen {
         } else {
             Preconditions.checkArgument(initFlag, "Snowflake Id Gen is not init ok");
         }
-        Preconditions.checkArgument(workerId >= 0 && workerId <= maxWorkerId, "workerID must gte 0 and lte 1023");
+        Preconditions.checkArgument(workerId >= 0 && workerId <= maxWorkerId, "workerID must gte 0 and lte " + maxWorkerId);
     }
 
     public synchronized Result get(String key) {
